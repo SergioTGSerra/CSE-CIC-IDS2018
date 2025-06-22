@@ -1,6 +1,10 @@
 # Machine Learning Pipeline for Network Intrusion Detection
 
-This repository contains a comprehensive machine learning pipeline for network intrusion detection using the CSE-CIC-IDS2018 dataset. The pipeline is implemented in a Jupyter notebook and includes data preprocessing, exploratory data analysis, feature engineering, and various machine learning models for classification.
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
+[![scikit-learn](https://img.shields.io/badge/scikit--learn-1.0%2B-orange)](https://scikit-learn.org/)
+[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.6%2B-yellow)](https://www.tensorflow.org/)
+
+A comprehensive machine learning pipeline for network intrusion detection using the CSE-CIC-IDS2018 dataset. This project implements a complete workflow from data preprocessing to model evaluation, designed to detect various types of network attacks.
 
 ## Table of Contents
 
@@ -19,11 +23,24 @@ This repository contains a comprehensive machine learning pipeline for network i
 
 ## Overview
 
-Network intrusion detection is a critical component of cybersecurity, aimed at identifying unauthorized access or malicious activities in computer networks. This project implements a machine learning pipeline to detect various types of network intrusions using the CSE-CIC-IDS2018 dataset, which contains benign and attack network traffic data.
+Network intrusion detection is a critical component of cybersecurity that identifies unauthorized access or malicious activities in computer networks. This project provides:
+
+- A complete machine learning pipeline for network traffic analysis
+- Multiple classification models to detect various attack types
+- Comprehensive data preprocessing and feature engineering techniques
+- Detailed model evaluation and comparison metrics
 
 ## Dataset
 
-The CSE-CIC-IDS2018 dataset is a comprehensive collection of network traffic data that includes various types of attacks, such as DoS, DDoS, brute force, XSS, SQL injection, infiltration, and botnet activities. The dataset is labeled, making it suitable for supervised learning approaches to intrusion detection.
+The [CSE-CIC-IDS2018 dataset](https://www.unb.ca/cic/datasets/ids-2018.html) contains network traffic data with various attack types:
+
+- DoS (Denial of Service)
+- DDoS (Distributed Denial of Service)
+- Brute Force attacks
+- Web attacks (XSS, SQL Injection)
+- Infiltration and botnet activities
+
+The dataset is labeled, making it suitable for supervised learning approaches to intrusion detection.
 
 ## Pipeline Workflow
 
@@ -73,59 +90,63 @@ The machine learning pipeline follows these main steps:
 
 ## Requirements
 
-The pipeline requires the following Python libraries:
+This project requires Python 3.8+ and the following libraries:
 
-- pandas
-- numpy
-- matplotlib
-- seaborn
-- scikit-learn
-- xgboost
-- lightgbm
-- catboost
-- tensorflow
-- plotly
+### Core Libraries
+- **pandas** - Data manipulation and analysis
+- **numpy** - Numerical computing
+- **scikit-learn** - Machine learning algorithms
 
-You can install these dependencies using pip:
+### Visualization
+- **matplotlib** - Data visualization
+- **seaborn** - Statistical data visualization
+- **plotly** - Interactive visualizations
 
-```bash
-pip install pandas numpy matplotlib seaborn scikit-learn xgboost lightgbm catboost tensorflow plotly
-```
+### Advanced ML Models
+- **xgboost** - Gradient boosting framework
+- **lightgbm** - Gradient boosting framework
+- **catboost** - Gradient boosting framework
+- **tensorflow** - Deep learning framework
+
+All dependencies are specified in the `requirements.txt` file.
 
 ## Usage
 
+### Quick Start
+
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/network-intrusion-detection.git
-   cd network-intrusion-detection
+   git clone https://github.com/SergioTGSerra/CSE-CIC-IDS2018.git
+   cd CSE-CIC-IDS2018
    ```
 
 2. Install the required dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-   
-   For minimal testing, you can install just the core dependencies:
+
+3. Run the test pipeline with sample data:
    ```bash
-   pip install pandas numpy matplotlib seaborn scikit-learn tqdm
+   python test_pipeline.py
    ```
 
-3. Open the Jupyter notebook:
+### Full Pipeline
+
+1. Download the [CSE-CIC-IDS2018 dataset](https://www.unb.ca/cic/datasets/ids-2018.html) and place the CSV files in the `data` directory.
+
+2. Open and run the Jupyter notebook:
    ```bash
-   jupyter notebook ml_pipeline_notebook.ipynb
+   jupyter notebook ml_pipeline_notebook_v3.ipynb
    ```
 
-4. Run the cells in the notebook to execute the pipeline.
+### Memory-Efficient Version
 
-### Testing with Sample Data
-
-For quick testing of the pipeline functionality, you can use the provided test script:
-
+For systems with limited memory, use the memory-efficient version of the notebook:
 ```bash
-python test_pipeline.py
+jupyter notebook ml_pipeline_notebook_v2.ipynb
 ```
 
-This script creates a synthetic dataset with 200 records and runs a simplified version of the machine learning pipeline to verify that all components work correctly.
+This version loads and processes data in chunks to reduce memory usage.
 
 ## Pipeline Components
 
